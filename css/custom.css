@@ -1,0 +1,81 @@
+/* ===================================================================
+   custom.css — melhorias visuais subtis sobre o template Resume
+   Carregado DEPOIS de styles.css para poder sobrepor com segurança.
+   =================================================================== */
+
+/* Transições globais suaves */
+a,
+.social-icon,
+.resume-section .d-flex,
+.img-profile {
+    transition: all 0.25s ease-in-out;
+}
+
+/* Entradas de experiência e formação: elevam-se ao passar o rato */
+.resume-section-content .d-flex {
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.resume-section-content .d-flex:hover {
+    background-color: rgba(0, 0, 0, 0.025);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Links de conteúdo com sublinhado animado */
+.resume-section-content a:not(.social-icon) {
+    position: relative;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+}
+
+.resume-section-content a:not(.social-icon):hover {
+    background-size: 100% 2px;
+}
+
+/* Ícones sociais: crescem e ganham cor ao passar o rato */
+.social-icons .social-icon:hover {
+    transform: translateY(-3px) scale(1.08);
+    background-color: #bd5d38;
+}
+
+/* Foto de perfil com leve zoom ao passar o rato */
+.img-profile:hover {
+    transform: scale(1.03);
+}
+
+/* Divisórias mais elegantes (gradiente que desvanece nas pontas) */
+hr.m-0 {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(0, 0, 0, 0.12),
+        transparent
+    );
+    opacity: 1;
+}
+
+/* Títulos das secções com um pequeno acento por baixo */
+.resume-section-content h2 {
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.resume-section-content h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 3rem;
+    height: 3px;
+    border-radius: 2px;
+    background-color: #bd5d38;
+}
